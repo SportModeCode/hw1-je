@@ -106,12 +106,111 @@
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
 
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS studios;
+DROP TABLE IF EXISTS actors;
+
 -- Create new tables, according to your domain model
 -- TODO!
+
+CREATE TABLE movies (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  year INTEGER,
+  rating TEXT,
+  studio_id INTEGER
+);
+
+CREATE TABLE roles (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  movie_id INTEGER,
+  actor_id INTEGER,
+  character TEXT
+);
+
+CREATE TABLE actors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT
+);
+
+CREATE TABLE studios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  studio_name TEXT
+);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+
+-- Studios
+Insert INTO studios (studio_name) Values ("Warner Bros.");
+
+-- Movies
+Insert INTO movies (title, year, rating, studio_id)
+Values ("Batman Begins", 2005, "PG-13", 1);
+
+Insert INTO movies (title, year, rating, studio_id)
+Values ("The Dark Knight", 2008, "PG-13", 1);
+
+Insert INTO movies (title, year, rating, studio_id)
+Values ("The Dark Knight Rises", 2012, "PG-13", 1);
+
+-- Actors
+Insert INTO actors (name)
+Values ("Christian Bale");
+
+Insert INTO actors (name)
+Values ("Michael Caine");
+
+Insert INTO actors (name)
+Values ("Liam Neeson");
+
+Insert INTO actors (name)
+Values ("Katie Holmes");
+
+Insert INTO actors (name)
+Values ("Gary Oldman");
+
+Insert INTO actors (name)
+Values ("Heath Ledger");
+
+Insert INTO actors (name)
+Values ("Aaron Eckhart");
+
+Insert INTO actors (name)
+Values ("Maggie Gyllenhaal");
+
+Insert INTO actors (name)
+Values ("Tom Hardy");
+
+Insert INTO actors (name)
+Values ("Joseph Gordon-Levitt");
+
+Insert INTO actors (name)
+Values ("Anne Hathaway");
+
+-- Roles
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 1, "Bruce Wayne");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 1, "Bruce Wayne");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (3, 1, "Bruce Wayne");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 2, "Alfred");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 2, "Alfred");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 3, "Ra's Al Ghul");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 4, "Rachel Dawes");
 
 -- Prints a header for the movies output
 .print "Movies"
