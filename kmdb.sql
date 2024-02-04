@@ -191,6 +191,7 @@ Insert INTO actors (name)
 Values ("Anne Hathaway");
 
 -- Roles
+-- Bruce Wayne
 Insert INTO roles (movie_id, actor_id, character)
 Values (1, 1, "Bruce Wayne");
 
@@ -200,17 +201,51 @@ Values (2, 1, "Bruce Wayne");
 Insert INTO roles (movie_id, actor_id, character)
 Values (3, 1, "Bruce Wayne");
 
+-- Alfred
 Insert INTO roles (movie_id, actor_id, character)
 Values (1, 2, "Alfred");
 
 Insert INTO roles (movie_id, actor_id, character)
 Values (2, 2, "Alfred");
 
+-- Ra's Al Ghul
 Insert INTO roles (movie_id, actor_id, character)
 Values (1, 3, "Ra's Al Ghul");
 
+-- Rachel Dawes
 Insert INTO roles (movie_id, actor_id, character)
 Values (1, 4, "Rachel Dawes");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 8, "Rachel Dawes");
+
+-- Commissioner Gordon
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 5, "Commissioner Gordon");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (3, 5, "Commissioner Gordon");
+
+-- Joker
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 6, "Joker");
+
+-- Harvey Dent
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 7, "Harvey Dent");
+
+-- Bane
+Insert INTO roles (movie_id, actor_id, character)
+Values (3, 9, "Bane");
+
+-- John Blake
+Insert INTO roles (movie_id, actor_id, character)
+Values (3, 10, "John Blake");
+
+-- Selina Kyle
+Insert INTO roles (movie_id, actor_id, character)
+Values (3, 11, "Selina Kyle");
+
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -219,6 +254,9 @@ Values (1, 4, "Rachel Dawes");
 
 -- The SQL statement for the movies output
 -- TODO!
+
+SELECT movies.title, movies.year, movies.rating, studios.studio_name
+FROM movies INNER JOIN studios ON studios.id = movies.studio_id;
 
 -- Prints a header for the cast output
 .print ""
@@ -229,3 +267,7 @@ Values (1, 4, "Rachel Dawes");
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.title, actors.name, roles.character
+FROM roles INNER JOIN movies ON movies.id = roles.movie_id
+INNER JOIN actors ON actors.id = roles.actor_id;
