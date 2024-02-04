@@ -156,7 +156,7 @@ Values ("The Dark Knight", 2008, "PG-13", 1);
 Insert INTO movies (title, year, rating, studio_id)
 Values ("The Dark Knight Rises", 2012, "PG-13", 1);
 
--- Actors
+-- Batman Begins
 Insert INTO actors (name)
 Values ("Christian Bale");
 
@@ -172,6 +172,22 @@ Values ("Katie Holmes");
 Insert INTO actors (name)
 Values ("Gary Oldman");
 
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 1, "Bruce Wayne");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 2, "Alfred");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 3, "Ra's Al Ghul");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 4, "Rachel Dawes");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (1, 5, "Commissioner Gordon");
+
+-- The Dark Knight
 Insert INTO actors (name)
 Values ("Heath Ledger");
 
@@ -181,6 +197,22 @@ Values ("Aaron Eckhart");
 Insert INTO actors (name)
 Values ("Maggie Gyllenhaal");
 
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 1, "Bruce Wayne");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 6, "Joker");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 7, "Harvey Dent");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 2, "Alfred");
+
+Insert INTO roles (movie_id, actor_id, character)
+Values (2, 8, "Rachel Dawes");
+
+-- The Dark Knight Rises
 Insert INTO actors (name)
 Values ("Tom Hardy");
 
@@ -190,59 +222,18 @@ Values ("Joseph Gordon-Levitt");
 Insert INTO actors (name)
 Values ("Anne Hathaway");
 
--- Roles
--- Bruce Wayne
-Insert INTO roles (movie_id, actor_id, character)
-Values (1, 1, "Bruce Wayne");
-
-Insert INTO roles (movie_id, actor_id, character)
-Values (2, 1, "Bruce Wayne");
-
 Insert INTO roles (movie_id, actor_id, character)
 Values (3, 1, "Bruce Wayne");
-
--- Alfred
-Insert INTO roles (movie_id, actor_id, character)
-Values (1, 2, "Alfred");
-
-Insert INTO roles (movie_id, actor_id, character)
-Values (2, 2, "Alfred");
-
--- Ra's Al Ghul
-Insert INTO roles (movie_id, actor_id, character)
-Values (1, 3, "Ra's Al Ghul");
-
--- Rachel Dawes
-Insert INTO roles (movie_id, actor_id, character)
-Values (1, 4, "Rachel Dawes");
-
-Insert INTO roles (movie_id, actor_id, character)
-Values (2, 8, "Rachel Dawes");
-
--- Commissioner Gordon
-Insert INTO roles (movie_id, actor_id, character)
-Values (1, 5, "Commissioner Gordon");
 
 Insert INTO roles (movie_id, actor_id, character)
 Values (3, 5, "Commissioner Gordon");
 
--- Joker
-Insert INTO roles (movie_id, actor_id, character)
-Values (2, 6, "Joker");
-
--- Harvey Dent
-Insert INTO roles (movie_id, actor_id, character)
-Values (2, 7, "Harvey Dent");
-
--- Bane
 Insert INTO roles (movie_id, actor_id, character)
 Values (3, 9, "Bane");
 
--- John Blake
 Insert INTO roles (movie_id, actor_id, character)
 Values (3, 10, "John Blake");
 
--- Selina Kyle
 Insert INTO roles (movie_id, actor_id, character)
 Values (3, 11, "Selina Kyle");
 
